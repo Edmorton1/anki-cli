@@ -4,6 +4,14 @@
   "main": "./src/api.js",
   "bin": "./src/index.js",
   "type": "commonjs",
+  "homepage": "https://github.com/Edmorton1/anki-cli#readme",
+  "bugs": {
+    "url": "https://github.com/Edmorton1/anki-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edmorton1/anki-cli.git"
+  },
   "scripts": {
     "lint": "biome format --write",
     "start": "node ./src/index.js",
