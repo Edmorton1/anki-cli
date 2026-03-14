@@ -14,6 +14,18 @@ const rl = readline.createInterface({
 
 console.log('If list.txt exists in this directory, it will be used\n');
 
+const promptAndExecute = () => {
+  promptFilePath((filePath) => {
+    try {
+      execute(filePath);
+      exit(rl);
+    } catch (err) {
+      console.error(err.message);
+      promptAndExecute();
+    }
+  }, rl);
+}
+
 try {
   console.log('list.txt found, start operation\n');
   execute('./list.txt');
@@ -24,15 +36,6 @@ try {
     exit(rl);
   } else {
     console.log('list.txt not found\n');
-
-    promptFilePath((filePath) => {
-      try {
-        execute(filePath);
-        exit(rl);
-      } catch (err) {
-        console.error(err.message);
-        exit(rl);
-      }
-    }, rl);
+    promptAndExecute();
   }
 }
