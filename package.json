@@ -1,0 +1,21 @@
+{
+  "name": "anki-cli",
+  "version": "1.0.0",
+  "main": "./src/api.js",
+  "bin": "./src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "lint": "biome format --write",
+    "start": "node ./src/index.js",
+    "bin": "pkg . --output anki.exe",
+    "everything": "npm link && pkg . --output C:\\Users\\kyril\\Desktop\\anki\\anki.exe"
+  },
+  "pkg": {
+    "targets": [
+      "node18-win-x64"
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.15"
+  }
+}
