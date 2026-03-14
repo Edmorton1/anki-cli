@@ -15,8 +15,8 @@
   "scripts": {
     "lint": "biome format --write",
     "start": "node ./src/index.js",
-    "bin": "pkg . --output anki.exe",
-    "everything": "pkg . --output C:\\Users\\kyril\\Desktop\\anki\\anki.exe"
+    "bin:test": "pkg . --output anki.exe",
+    "bin": "pkg . --output C:\\Users\\kyril\\Desktop\\anki\\anki.exe"
   },
   "pkg": {
     "targets": [
