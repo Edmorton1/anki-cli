@@ -1,17 +1,13 @@
 const fs = require('node:fs');
-const path = require('node:path');
 
-const FILE_PATH = path.resolve('newAnki.txt');
-
-// TODO: Убрать дублирование
 module.exports = {
-  saveWord: (original, translate) => {
+  saveWord: (original, translate, filePath) => {
     const line = `${original};${translate}\n`;
 
-    if (!fs.existsSync(FILE_PATH)) {
-      fs.writeFileSync(FILE_PATH, line, 'utf-8');
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, line, 'utf-8');
     } else {
-      fs.appendFileSync(FILE_PATH, line, 'utf-8');
+      fs.appendFileSync(filePath, line, 'utf-8');
     }
   }
 };
